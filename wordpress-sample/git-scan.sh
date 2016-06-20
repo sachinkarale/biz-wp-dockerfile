@@ -7,6 +7,7 @@ git config --global user.name "sachinkarale"
 git add *
 git status | cat >> /tmp/plugin.log
 git commit -a -m "modification done"
+git pull
 git push -u origin master
 
 
