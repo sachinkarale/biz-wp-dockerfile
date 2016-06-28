@@ -13,6 +13,7 @@ echo "Host github.com\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
 WORKDIR /var/www/html
 RUN rm index.html
 RUN chown -R www-data:www-data *  && chmod 777 /var/www/html/
+ADD wp-config.php  wp-config.php
 #VOLUME ["/var/www/html"]
 EXPOSE	80
 #CMD ["./etc/init.d/run.sh "]
