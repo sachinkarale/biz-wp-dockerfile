@@ -14,6 +14,8 @@ WORKDIR /var/www/html
 RUN rm index.html
 RUN chown -R www-data:www-data *  && chmod 777 /var/www/html/
 ADD wp-config.php  wp-config.php
+WORKDIR /var/www/html/wp-content/
+RUN for z in plugins/*.zip ; do unzip $z -d plugins/ ; done && chown -R www-data:www-data plugins && rm plugins/*.zip
 #VOLUME ["/var/www/html"]
 EXPOSE	80
 #CMD ["./etc/init.d/run.sh "]
